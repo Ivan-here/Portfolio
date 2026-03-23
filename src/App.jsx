@@ -26,7 +26,9 @@ export default function IvanPortfolio() {
         "Built admin panel features for managing users, products, and system data.",
         "Developed user settings and profile customization functionality.",
         "Contributed to building a platform supporting farmers, customers, restaurants, and NGOs in one system."
-      ]
+      ],
+      githubFrontend: "https://github.com/Ivan-here/Capstone-frontend",
+      githubBackend: "https://github.com/Ivan-here/Capstone-Project"
     },
     {
       title: "Before You Go",
@@ -39,7 +41,8 @@ export default function IvanPortfolio() {
         "Helped implement notification sending logic.",
         "Implemented data persistence using SwiftData.",
         "Contributed to the location-based reminder workflow and notification experience."
-      ]
+      ],
+      github: "https://github.com/SaKsHaTGaRg/BeforeYouGo"
     },
     {
       title: "Canada Tour Guide App",
@@ -52,7 +55,9 @@ export default function IvanPortfolio() {
         "Built the main screen of the Android application.",
         "Built the settings screen.",
         "Implemented persistent user settings using SharedPreferences (e.g., dark mode, dyslexic mode)."
-      ]
+      ],
+      githubFrontend: "https://github.com/SaKsHaTGaRg/Tour-Guide-App",
+      githubBackend: "https://github.com/Ivan-here/COMP3074_Backend_FastAPI"
     }
   ];
 
@@ -289,6 +294,38 @@ export default function IvanPortfolio() {
                         <li key={h}>{h}</li>
                     ))}
                   </ul>
+                  <div className="mt-5 flex gap-3 flex-wrap">
+                    {project.githubFrontend && (
+                        <a
+                            href={project.githubFrontend}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="px-4 py-2 rounded-xl bg-cyan-400 text-black font-semibold hover:bg-cyan-300 transition"
+                        >
+                          Frontend Code →
+                        </a>
+                    )}
+                    {project.githubBackend && (
+                        <a
+                            href={project.githubBackend}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="px-4 py-2 rounded-xl bg-white/10 border border-white/10 text-cyan-300 hover:bg-white/20 transition"
+                        >
+                          Backend Code →
+                        </a>
+                    )}
+                    {project.github && (
+                        <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="px-4 py-2 rounded-xl bg-white/10 border border-white/10 text-cyan-300 hover:bg-white/20 transition"
+                        >
+                          View Code →
+                        </a>
+                    )}
+                  </div>
                 </div>
             ))}
           </div>
