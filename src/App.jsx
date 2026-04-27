@@ -476,7 +476,7 @@ export default function IvanPortfolio() {
               <a href="mailto:ivan.barnash@gmail.com" className="rounded-2xl bg-white px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-100">
                 ivan.barnash@gmail.com
               </a>
-              <a href="/files/resume.pdf" target="_blank" className="rounded-2xl bg-white px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-100">
+              <a href="/files/resume.docx" target="_blank" className="rounded-2xl bg-white px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-100">
                 Resume
               </a>
               <p className="rounded-2xl border border-white/15 bg-white/10 px-6 py-3 font-semibold text-white transition hover:bg-white/15">
