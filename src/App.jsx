@@ -1,28 +1,30 @@
-import {useState} from "react";
+import ProjectGallery from "./ProjectGallery";
 
 export default function IvanPortfolio() {
   const skills = {
     Languages: ["Java", "C#", "Python", "SQL", "Git", "Kotlin", "Swift"],
     Web: ["HTML", "CSS", "JavaScript", "ASP.NET Core", "Spring Boot", "FastAPI", "REST APIs", "React"],
     Database: ["MySQL", "PostgreSQL", "MongoDB"],
-    Tools: ["Jira", "Visual Paradigm", "Git", "Office 365", "Android Studio", "Xcode"],
-    Methods: ["Agile Development", "Unit Testing", "Debugging"]
+    Tools: ["Docker", "GitHub Actions", "Stripe", "Cloudinary", "Jira", "Visual Paradigm", "Git", "Android Studio", "Xcode"],
+    Methods: ["Agile Development", "Unit Testing", "Debugging", "API Security", "Role-Based Access", "CI/CD"]
   };
 
-  const [selectedImage, setSelectedImage] = useState(null);
+
 
   const academicSamples = [
     {
-      title: "Farmer Marketplace Platform",
-      type: "Capstone Project",
+      title: "Locally — Local Food Marketplace",
+      type: "Featured Capstone · Live Website",
+      live: "https://www.locallyl.com/",
       summary:
           "A full-stack marketplace platform designed to connect farmers, customers, and organizations in a single ecosystem. Farmers can sell fresh products, customers can browse and purchase items, and NGOs can reserve leftover products posted by restaurants to help reduce food waste.",
-      stack: ["React", "Java", "Spring Boot", "JWT", "Stripe", "Microservices"],
+      stack: ["React", "Java 21", "Spring Boot", "MongoDB", "Stripe", "Docker"],
       highlights: [
         "Implemented Stripe payment service integration for secure online transactions.",
         "Designed and worked within a microservices-based architecture for scalability and modularity.",
         "Developed user-related functionality including registration, login, profile creation, profile management, and database integration.",
-        "Implemented role-based security using JWT authentication.",
+        "Hardened JWT authentication, current-role authorization, ownership checks, and private service endpoints.",
+        "Added server-side payment verification, inventory concurrency safeguards, and security regression tests.",
         "Built admin panel features for managing users, products, and system data.",
         "Developed user settings and profile customization functionality.",
         "Contributed to building a platform supporting farmers, customers, restaurants, and NGOs in one system."
@@ -98,7 +100,7 @@ export default function IvanPortfolio() {
   const capstoneDetails = [
     {
       title: "Project Summary",
-      text: "The Local Food Service App is a community-driven marketplace platform that connects farmers, restaurants, NGOs, and consumers. The system enables farmers to sell fresh products, restaurants to redistribute surplus food, and NGOs to reserve and collect donations, helping reduce food waste while improving access to local products."
+      text: "Locally is a community-driven marketplace platform that connects farmers, restaurants, NGOs, and consumers. The system enables farmers to sell fresh products, restaurants to redistribute surplus food, and NGOs to reserve and collect donations, helping reduce food waste while improving access to local products."
     },
     {
       title: "Project Vision",
@@ -121,8 +123,12 @@ export default function IvanPortfolio() {
       text: "User interface designs were created using Figma to define layouts, navigation, and user interactions. These wireframes guided the frontend development and ensured a consistent and user-friendly experience across the platform.",
     },
     {
-      title: "Status Reports",
-      text: "Throughout development, progress was tracked through regular status reports. The team achieved approximately 75% completion of both backend and frontend, including microservices implementation, API development, and initial integration testing, while planning remaining features such as payments, admin panel, and settings."
+      title: "Delivery & Validation",
+      text: "Locally has a live website at locallyl.com. The latest security hardening is available on the Ivan branches of both repositories: 41 backend and 4 frontend security tests passed, alongside production builds. These code changes require the documented deployment and staging checks before production rollout. The linked status report is an earlier academic milestone."
+    },
+    {
+      title: "Security & Reliability",
+      text: "The hardening work adds server-enforced ownership and role checks, protects internal APIs, verifies payments with Stripe, and guards inventory updates against concurrent requests. It also introduces private verification uploads, rate limits, browser security headers, dependency checks, and automated security regression suites. Production rollout and recovery procedures are documented with the code."
     },
     {
       title: "System Implementation",
@@ -149,14 +155,15 @@ export default function IvanPortfolio() {
 
   return (
       <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(34,211,238,0.12),_transparent_28%),linear-gradient(135deg,_#020617_0%,_#0f172a_45%,_#111827_100%)] text-white">
+        <a href="#about" className="skip-link">Skip to content</a>
         <div className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/60 backdrop-blur-xl">
-          <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+          <nav aria-label="Main navigation" className="max-w-6xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-3">
             <a href="#top" className="text-lg font-semibold tracking-wide text-white">
               Ivan Barnash
             </a>
-            <div className="hidden md:flex items-center gap-6 text-sm text-neutral-300">
+            <div className="flex w-full overflow-x-auto items-center gap-5 pb-1 text-sm text-neutral-300 md:w-auto md:pb-0">
               {navItems.map((item) => (
-                  <a key={item.label} href={item.href} className="transition hover:text-cyan-300">
+                  <a key={item.label} href={item.href} className="shrink-0 transition hover:text-cyan-300">
                     {item.label}
                   </a>
               ))}
@@ -176,16 +183,17 @@ export default function IvanPortfolio() {
                 Software Development Portfolio
               </p>
               <h1 className="text-5xl md:text-7xl font-black tracking-tight leading-[0.95] text-white">
-                Designing systems that scale,
-                <span className="block text-cyan-300">building backends that power real applications.</span>
+                From backend logic
+                <span className="block text-cyan-300">to real-world products.</span>
               </h1>
               <p className="mt-6 max-w-2xl text-lg text-neutral-300 leading-8">
                 I’m Ivan Barnash, a software development student focused on backend and full-stack development, web applications, mobile development, and database-driven solutions. I also have experience building neural models in Python. I enjoy building products that are technically solid and useful to real people.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
+                <a href="#capstone" className="rounded-2xl bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300">Explore Locally ↓</a>
                 <a
                     href="mailto:ivan.barnash@gmail.com"
-                    className="rounded-2xl bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300"
+                    className="rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
                 >
                   Contact Me
                 </a>
@@ -208,29 +216,15 @@ export default function IvanPortfolio() {
               </div>
             </div>
 
-            <div className="rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl p-7 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
-                  <p className="text-sm text-neutral-400">Focus</p>
-                  <p className="mt-2 text-lg font-semibold text-white">Backend-Focused Full-Stack Development</p>
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
-                  <p className="text-sm text-neutral-400">Education</p>
-                  <p className="mt-2 text-lg font-semibold text-white">George Brown College</p>
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
-                  <p className="text-sm text-neutral-400">Technologies</p>
-                  <p className="mt-2 text-lg font-semibold text-white">Java, Spring Boot, React</p>
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
-                  <p className="text-sm text-neutral-400">Also Working With</p>
-                  <p className="mt-2 text-lg font-semibold text-white">Swift, Kotlin, MongoDB</p>
-                </div>
-              </div>
-            </div>
+            <a href="#capstone" className="featured-preview group block overflow-hidden rounded-[28px] border border-cyan-300/20 bg-slate-900 shadow-2xl">
+              <div className="flex items-center justify-between gap-3 border-b border-white/10 px-5 py-4"><span className="text-xs uppercase tracking-[0.18em] text-cyan-200">Featured project</span><span className="flex items-center gap-2 text-xs text-emerald-200"><span className="h-2 w-2 rounded-full bg-emerald-300" />Live website</span></div>
+              <img src="/images/locally/main_page.png" alt="Locally marketplace with fresh produce listings from local sellers" width="1902" height="912" fetchPriority="high" className="w-full transition-transform duration-300 group-hover:scale-[1.02]" />
+              <div className="p-6"><p className="text-3xl font-bold">Locally</p><p className="mt-3 text-slate-300 leading-7">Local food. Less waste. A connected community.</p><p className="mt-5 text-sm font-semibold text-cyan-300">Explore the capstone project <span aria-hidden="true">↗</span></p></div>
+            </a>
           </div>
         </header>
 
+        <main>
         <section id="about" className={section}>
           <div className="grid gap-6 md:grid-cols-[1.2fr_0.8fr]">
             <div className={card}>
@@ -295,6 +289,7 @@ export default function IvanPortfolio() {
                     ))}
                   </ul>
                   <div className="mt-5 flex gap-3 flex-wrap">
+                    {project.live && <a href={project.live} target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-xl bg-emerald-300 text-slate-950 font-semibold hover:bg-emerald-200 transition">Visit live website ↗</a>}
                     {project.githubFrontend && (
                         <a
                             href={project.githubFrontend}
@@ -334,9 +329,9 @@ export default function IvanPortfolio() {
         <section id="capstone" className={section}>
           <div className={card}>
             <p className="text-sm uppercase tracking-[0.2em] text-cyan-300 mb-3">
-              Capstone Spotlight
+              Featured Case Study · Team Capstone
             </p>
-            <h2 className={sectionTitle}>Farmer Marketplace Platform</h2>
+            <h2 className={sectionTitle}>Locally — Local Food Marketplace</h2>
 
             <p className={`${sectionText} mt-5`}>
               This capstone project represents my strongest full-stack academic work.
@@ -352,6 +347,16 @@ export default function IvanPortfolio() {
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
+              <a href="https://www.locallyl.com/" target="_blank" rel="noopener noreferrer" className="rounded-xl bg-emerald-300 px-5 py-3 font-semibold text-slate-950 hover:bg-emerald-200">Visit locallyl.com ↗</a>
+              <a href="https://github.com/Ivan-here/Capstone-frontend/tree/Ivan" target="_blank" rel="noopener noreferrer" className="rounded-xl border border-white/20 px-5 py-3 hover:bg-white/10">Frontend source ↗</a>
+              <a href="https://github.com/Ivan-here/Capstone-Project/tree/Ivan" target="_blank" rel="noopener noreferrer" className="rounded-xl border border-white/20 px-5 py-3 hover:bg-white/10">Backend source ↗</a>
+            </div>
+            <dl className="my-8 grid gap-4 sm:grid-cols-3">
+              <div className="rounded-2xl bg-black/20 p-5"><dt className="text-sm text-slate-400">My contribution</dt><dd className="mt-2 font-semibold">Payments, identity, profiles, admin & security</dd></div>
+              <div className="rounded-2xl bg-black/20 p-5"><dt className="text-sm text-slate-400">Architecture</dt><dd className="mt-2 font-semibold">React + Spring Boot microservices</dd></div>
+              <div className="rounded-2xl bg-black/20 p-5"><dt className="text-sm text-slate-400">Delivery</dt><dd className="mt-2 font-semibold">Docker, GitHub Actions & a live domain</dd></div>
+            </dl>
+            <div className="mt-6 flex flex-wrap gap-3">
               <span className={pill}>React</span>
               <span className={pill}>Spring Boot</span>
               <span className={pill}>JWT</span>
@@ -360,6 +365,12 @@ export default function IvanPortfolio() {
               <span className={pill}>MongoDB</span>
             </div>
           </div>
+          <ProjectGallery />
+          <aside className="mt-6 rounded-2xl border border-cyan-300/20 bg-cyan-400/5 p-6">
+            <h3 className="text-xl font-bold">Latest engineering work: security hardening</h3>
+            <p className="mt-3 leading-7 text-slate-300">41 backend and 4 frontend security tests passed for the hardening changes. The Ivan branches contain the latest work; the live site is a separate deployment.</p>
+            <a href="https://github.com/Ivan-here/Capstone-Project/blob/Ivan/SECURITY.md" target="_blank" rel="noopener noreferrer" className="mt-4 inline-block font-semibold text-cyan-300 underline underline-offset-4">Read the security implementation & rollout notes ↗</a>
+          </aside>
           <div className="grid gap-5 md:grid-cols-2 mt-6 auto-rows-fr">
             {capstoneDetails.map((item) => (
                 <div key={item.title} className={card}>
@@ -415,31 +426,16 @@ export default function IvanPortfolio() {
                         View Project Vision →
                       </a>
                   )}
-                  {item.title === "Status Reports" && (
+                  {item.title === "Delivery & Validation" && (
                       <a
                           href="/files/status_report.pdf"
                           target="_blank"
                           className="inline-block mt-4 px-4 py-2 rounded-xl bg-white/10 border border-white/10 text-cyan-300 hover:bg-white/20 transition"
                       >
-                        View Status Report →
+                        View Earlier Status Report →
                       </a>
                   )}
-                  {item.title === "System Implementation" && (
-                      <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                        <img
-                            src="/images/Capstone_browse.png"
-                            alt="Browsing page"
-                            onClick={() => setSelectedImage("/images/Capstone_browse.png")}
-                            className="rounded-xl border border-white/10 shadow-lg hover:scale-[1.02] transition cursor-pointer"
-                        />
-                        <img
-                            src="/images/Capstone_profile.png"
-                            alt="Profile page"
-                            onClick={() => setSelectedImage("/images/Capstone_profile.png")}
-                            className="rounded-xl border border-white/10 shadow-lg hover:scale-[1.02] transition cursor-pointer"
-                        />
-                      </div>
-                  )}
+
                 </div>
             ))}
           </div>
@@ -476,12 +472,12 @@ export default function IvanPortfolio() {
               <a href="mailto:ivan.barnash@gmail.com" className="rounded-2xl bg-white px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-100">
                 ivan.barnash@gmail.com
               </a>
-              <a href="/files/resume.docx" target="_blank" className="rounded-2xl bg-white px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-100">
-                Resume
+              <a href="/files/resume.pdf" target="_blank" className="rounded-2xl bg-white px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-100">
+                Resume (PDF)
               </a>
-              <p className="rounded-2xl border border-white/15 bg-white/10 px-6 py-3 font-semibold text-white transition hover:bg-white/15">
-                +14375590347
-              </p>
+              <a href="tel:+14375590347" className="rounded-2xl border border-white/15 bg-white/10 px-6 py-3 font-semibold text-white transition hover:bg-white/15">
+                +1 (437) 559-0347
+              </a>
               <a href="https://github.com/Ivan-here" target="_blank" rel="noreferrer" className="rounded-2xl border border-white/15 bg-white/10 px-6 py-3 font-semibold text-white transition hover:bg-white/15">
                 GitHub
               </a>
@@ -494,18 +490,9 @@ export default function IvanPortfolio() {
             </div>
           </div>
         </section>
-        {selectedImage && (
-            <div
-                className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
-                onClick={() => setSelectedImage(null)}
-            >
-              <img
-                  src={selectedImage}
-                  className="max-w-[90%] max-h-[90%] rounded-xl"
-              />
-            </div>
-        )}
 
+
+        </main>
         <footer className="border-t border-white/10 bg-slate-950/60 backdrop-blur-xl">
           <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row gap-3 items-center justify-between text-sm text-neutral-400">
             <p>© 2026 Ivan Barnash</p>

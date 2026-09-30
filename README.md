@@ -1,16 +1,41 @@
-# React + Vite
+# Ivan Barnash — Software Development Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React and Tailwind CSS portfolio featuring backend, full-stack, and mobile projects.
 
-Currently, two official plugins are available:
+## Featured project: Locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[Visit the live website](https://www.locallyl.com/)
 
-## React Compiler
+Locally connects farmers, customers, restaurants, and NGOs through a local food marketplace, surplus-food reservations, and community features.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- [Frontend source — Ivan branch](https://github.com/Ivan-here/Capstone-frontend/tree/Ivan)
+- [Backend source — Ivan branch](https://github.com/Ivan-here/Capstone-Project/tree/Ivan)
+- [Security implementation and rollout notes](https://github.com/Ivan-here/Capstone-Project/blob/Ivan/SECURITY.md)
 
-## Expanding the ESLint configuration
+The case study covers payments, identity, profiles, administration, deployment, and security hardening. It distinguishes the live website from the latest branch changes awaiting rollout. Academic PDF documents are historical project artifacts.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Development
+
+Use Node.js 22.12+ and npm.
+
+```sh
+npm ci
+npm run dev
+```
+
+```sh
+npm run lint
+npm run build
+npm run preview
+```
+
+Deploy the generated `dist` directory to a static host. Current asset paths assume the portfolio is hosted at the domain root.
+
+## Content and images
+
+- `src/App.jsx`: biography, skills, projects, experience, and Locally case study.
+- `src/ProjectGallery.jsx`: screenshot captions and keyboard-accessible image dialog.
+- `public/images/locally/`: the three original screenshots copied from the sibling `locallyl` folder.
+- `public/files/`: resume and academic documents.
+
+Image viewing supports keyboard activation, Escape to close, focus restoration, and reduced motion preferences. Update screenshots and case-study details as the application evolves.
